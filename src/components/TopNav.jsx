@@ -50,14 +50,26 @@ export default function TopNav({ activeTab, setActiveTab, activeFarm, onSearchSu
         <nav className="flex items-center space-x-1 sm:space-x-2 text-xs font-medium">
           <button
             onClick={() => setActiveTab('selection')}
-            className={`px-3 py-1.5 rounded-md transition-all flex items-center space-x-1.5 font-semibold ${
+            className={`px-3 py-1.5 rounded-md transition-all flex items-center space-x-1.5 ${
               activeTab === 'selection'
-                ? 'text-white bg-white/[0.08] border border-white/10 shadow-sm'
+                ? 'text-white bg-white/[0.08] border border-white/10 shadow-sm font-semibold'
                 : 'text-slate-400 hover:text-slate-100 hover:bg-white/[0.04]'
             }`}
           >
-            <span className={`w-1.5 h-1.5 rounded-full ${activeTab === 'selection' ? 'bg-gisGreen-400' : 'bg-slate-500'}`}></span>
-            <span>Farm Selection</span>
+            <MapPin className="w-3.5 h-3.5 text-emerald-400" />
+            <span>GIS Map</span>
+          </button>
+
+          <button
+            onClick={() => setActiveTab('gis-dashboard')}
+            className={`px-3 py-1.5 rounded-md transition-all flex items-center space-x-1.5 ${
+              activeTab === 'gis-dashboard'
+                ? 'text-white bg-gisGreen-950/80 border border-gisGreen-500/50 text-emerald-300 shadow-sm font-semibold'
+                : 'text-slate-400 hover:text-slate-100 hover:bg-white/[0.04]'
+            }`}
+          >
+            <span className={`w-1.5 h-1.5 rounded-full ${activeTab === 'gis-dashboard' ? 'bg-gisGreen-400 animate-pulse' : 'bg-slate-500'}`}></span>
+            <span className="font-semibold">GIS Dashboard</span>
           </button>
 
           <button
@@ -69,7 +81,7 @@ export default function TopNav({ activeTab, setActiveTab, activeFarm, onSearchSu
             }`}
           >
             <BarChart2 className="w-3.5 h-3.5" />
-            <span>Dashboard</span>
+            <span>NASA Metrics</span>
           </button>
 
           <button
