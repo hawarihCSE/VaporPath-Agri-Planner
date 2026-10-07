@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Search, MapPin, Layers, BarChart2, RefreshCw, AlertTriangle, Download, ShieldCheck } from 'lucide-react';
+import { Search, MapPin, Layers, BarChart2, RefreshCw, AlertTriangle, Download, ShieldCheck, Droplets } from 'lucide-react';
 
 export default function TopNav({ activeTab, setActiveTab, activeFarm, onSearchSubmit, onExportReport }) {
   const [searchQuery, setSearchQuery] = useState('Mato Grosso, Brazil');
@@ -11,7 +11,7 @@ export default function TopNav({ activeTab, setActiveTab, activeFarm, onSearchSu
         <div className="flex items-center space-x-2.5 cursor-pointer" onClick={() => setActiveTab('selection')}>
           <div className="w-2.5 h-2.5 rounded-sm bg-gisGreen-500 shadow-[0_0_8px_#10B981]"></div>
           <span className="text-sm font-bold tracking-wider text-slate-100 uppercase font-mono">
-            VAPORPATH <span class="text-emerald-400 font-semibold">GIS</span>
+            VAPORPATH <span className="text-emerald-400 font-semibold">GIS</span>
           </span>
         </div>
         <div className="h-4 w-px bg-white/10 hidden sm:block"></div>
@@ -70,6 +70,18 @@ export default function TopNav({ activeTab, setActiveTab, activeFarm, onSearchSu
           >
             <span className={`w-1.5 h-1.5 rounded-full ${activeTab === 'gis-dashboard' ? 'bg-gisGreen-400 animate-pulse' : 'bg-slate-500'}`}></span>
             <span className="font-semibold">GIS Dashboard</span>
+          </button>
+
+          <button
+            onClick={() => setActiveTab('moisture')}
+            className={`px-3 py-1.5 rounded-md transition-all flex items-center space-x-1.5 ${
+              activeTab === 'moisture'
+                ? 'text-white bg-blue-950/80 border border-blue-500/50 text-blue-300 shadow-sm font-semibold'
+                : 'text-slate-400 hover:text-slate-100 hover:bg-white/[0.04]'
+            }`}
+          >
+            <Droplets className="w-3.5 h-3.5 text-blue-400" />
+            <span>Soil Moisture</span>
           </button>
 
           <button
