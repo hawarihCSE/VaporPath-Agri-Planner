@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html class="dark" lang="en" style=""><svg class="inline-defs-container" aria-hidden="true"
+    style="position:absolute;width:0;height:0;overflow:hidden"></svg>
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>NASA Earth Observation // L4-Analytics</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;display=swap"
+        rel="stylesheet">
+    <!-- Material Symbols Outlined -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-background": "#dce3f0",
+                        "on-error-container": "#ffdad6",
+                        "primary": "#4edea3",
+                        "surface": "#0d141d",
+                        "surface-container-lowest": "#080f17",
+                        "surface-container-high": "#232a34",
+                        "on-tertiary-fixed-variant": "#930013",
+                        "secondary-fixed": "#ffddb8",
+                        "secondary-fixed-dim": "#ffb95f",
+                        "on-secondary-fixed-variant": "#653e00",
+                        "on-secondary": "#472a00",
+                        "surface-dim": "#0d141d",
+                        "on-secondary-fixed": "#2a1700",
+                        "on-primary-container": "#00422b",
+                        "secondary": "#ffb95f",
+                        "secondary-container": "#ee9800",
+                        "primary-fixed": "#6ffbbe",
+                        "on-tertiary": "#68000a",
+                        "on-surface": "#dce3f0",
+                        "on-tertiary-container": "#79000e",
+                        "inverse-primary": "#006c49",
+                        "outline": "#86948a",
+                        "tertiary-container": "#ff7a73",
+                        "on-surface-variant": "#bbcabf",
+                        "inverse-on-surface": "#2a313b",
+                        "surface-container-low": "#151c25",
+                        "on-primary": "#003824",
+                        "inverse-surface": "#dce3f0",
+                        "on-error": "#690005",
+                        "primary-fixed-dim": "#4edea3",
+                        "outline-variant": "#3c4a42",
+                        "error-container": "#93000a",
+                        "surface-variant": "#2e353f",
+                        "tertiary-fixed": "#ffdad7",
+                        "surface-container": "#192029",
+                        "on-primary-fixed": "#002113",
+                        "surface-tint": "#4edea3",
+                        "on-secondary-container": "#5b3800",
+                        "surface-bright": "#333a44",
+                        "primary-container": "#10b981",
+                        "background": "#0d141d",
+                        "tertiary": "#ffb3ad",
+                        "on-tertiary-fixed": "#410004",
+                        "surface-container-highest": "#2e353f",
+                        "error": "#ffb4ab",
+                        "on-primary-fixed-variant": "#005236",
+                        "tertiary-fixed-dim": "#ffb3ad"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "space-lg": "1.5rem",
+                        "space-md": "1rem",
+                        "gutter-lg": "1.5rem",
+                        "margin": "1.5rem",
+                        "gutter": "1rem",
+                        "space-sm": "0.5rem",
+                        "space-xl": "2rem",
+                        "space-xs": "0.25rem",
+                        "margin-sm": "1rem"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Inter"],
+                        "label-mono": ["JetBrains Mono"],
+                        "headline-lg": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "telemetry-display": ["JetBrains Mono"],
+                        "body-sm": ["Inter"],
+                        "body-md": ["Inter"],
+                        "telemetry-md": ["JetBrains Mono"],
+                        "headline-sm": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-xl": ["Inter"],
+                        "headline-xl-mobile": ["Inter"],
+                        "label-mono-xs": ["JetBrains Mono"],
+                        "telemetry-lg": ["JetBrains Mono"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "label-mono": ["11px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["22px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "telemetry-display": ["32px", { "lineHeight": "36px", "letterSpacing": "-0.03em", "fontWeight": "700" }],
+                        "body-sm": ["12px", { "lineHeight": "18px", "letterSpacing": "0", "fontWeight": "400" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0", "fontWeight": "400" }],
+                        "telemetry-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0", "fontWeight": "500" }],
+                        "headline-sm": ["16px", { "lineHeight": "24px", "letterSpacing": "0", "fontWeight": "600" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "0", "fontWeight": "400" }],
+                        "headline-xl": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-xl-mobile": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "label-mono-xs": ["10px", { "lineHeight": "14px", "letterSpacing": "0.08em", "fontWeight": "600" }],
+                        "telemetry-lg": ["18px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600" }]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 20;
+            display: inline-block;
+            vertical-align: middle;
+            line-height: 1;
+        }
+
+        @keyframes pulse-slow {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.3;
+            }
+        }
+
+        .animate-telemetry-pulse {
+            animation: pulse-slow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-surface-container-lowest text-on-surface antialiased min-h-screen flex flex-col font-body-md select-none overflow-x-hidden">
+    <!-- ================= TOP APP BAR (Shared Components JSON Anchor) ================= -->
+    <header
+        class="w-full px-6 flex justify-between items-center h-14 border-b border-outline-variant bg-surface-container-lowest shrink-0 z-30">
+        <!-- Brand Anchor & Mission Title -->
+        <div class="flex items-center gap-6">
+            <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-primary text-xl">satellite_alt</span>
+
+            </div>
+            <!-- Sector Selector Pill -->
+
+        </div>
+        <!-- Center Navigation Links -->
+
+        <!-- Trailing Actions & Telemetry Sync Status -->
+        <div class="flex items-center gap-3">
+            <!-- Sync Status Badge -->
+            <div class="flex items-center gap-2 px-3 py-1 rounded bg-surface-container border border-outline-variant">
+                <span class="w-2 h-2 rounded-full bg-primary animate-telemetry-pulse"></span>
+                <span class="font-label-mono text-label-mono text-primary font-medium">Sync UTC [03:42:19]</span>
+            </div>
+            <!-- Action Buttons -->
+            <button
+                class="hidden md:flex items-center gap-1.5 px-3 py-1 rounded border border-outline-variant text-on-surface font-body-sm text-body-sm hover:bg-surface-container-high transition-colors active:scale-[0.99]">
+                <span class="material-symbols-outlined text-sm text-on-surface-variant">download</span>
+                Export NetCDF
+            </button>
+            <!-- Trailing Action Icons -->
+            <div class="flex items-center gap-1 pl-2 border-l border-outline-variant text-on-surface-variant">
+                <button class="p-1.5 rounded hover:bg-surface-container-high hover:text-primary transition-colors"
+                    title="Sensors">
+                    <span class="material-symbols-outlined text-lg">sensors</span>
+                </button>
+                <button class="p-1.5 rounded hover:bg-surface-container-high hover:text-primary transition-colors"
+                    title="Calibration">
+                    <span class="material-symbols-outlined text-lg">tune</span>
+                </button>
+                <button
+                    class="p-1.5 rounded hover:bg-surface-container-high hover:text-primary transition-colors relative"
+                    title="Notifications">
+                    <span class="material-symbols-outlined text-lg">notifications</span>
+                    <span class="absolute top-1 right-1 w-1.5 h-1.5 bg-secondary rounded-full"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+    <!-- ================= MAIN TELEMETRY WORKSPACE ================= -->
+    <div class="flex flex-1 overflow-hidden">
+        <!-- Left Tactical Rail (SideNavBar from Shared Components JSON) -->
+        <aside
+            class="h-[calc(100vh-3.5rem)] w-64 flex flex-col justify-between py-4 border-r border-outline-variant shrink-0 bg-surface-container-low hidden md:flex">
+            <!-- Mission Sector Info Header -->
+            <div class="px-4 pb-4 border-b border-outline-variant">
+                <div class="flex items-center gap-2.5 mb-2">
+                    <div
+                        class="w-7 h-7 rounded bg-surface-container-high border border-outline-variant flex items-center justify-center text-primary">
+                        <span class="material-symbols-outlined text-base">radar</span>
+                    </div>
+                    <div>
+                        <div class="text-headline-sm font-headline-sm text-on-surface tracking-wide">SECTOR 04-B</div>
+                        <div class="text-label-mono-xs font-label-mono-xs text-on-surface-variant">-12.6819° N,
+                            -55.9355° W</div>
+                    </div>
+                </div>
+                <button
+                    class="w-full mt-2 py-1.5 px-3 rounded bg-primary-container text-on-primary-container font-headline-sm text-xs flex items-center justify-center gap-2 hover:bg-primary transition-colors">
+                    <span class="w-1.5 h-1.5 rounded-full bg-on-primary-container animate-ping"></span>
+                    Live Orbital Stream
+                </button>
+            </div>
+            <!-- Core Sensor Feeds Navigation -->
+            <div class="flex-1 py-3 space-y-1 overflow-y-auto">
+                <div class="px-4 pb-1 text-label-mono-xs font-label-mono-xs uppercase tracking-widest text-outline">
+                    PRIMARY PRODUCTS</div>
+                <!-- SMAP L4 Active Tab -->
+                <a class="flex items-center gap-3 px-3 py-2 text-primary border-l-2 border-primary bg-surface-container font-telemetry-md text-telemetry-md"
+                    href="#">
+                    <span class="material-symbols-outlined text-lg">radar</span>
+                    <span class="">SMAP L4</span>
+                    <span
+                        class="ml-auto text-label-mono-xs font-label-mono-xs text-secondary bg-secondary/10 px-1.5 py-0.5 rounded">ACTIVE</span>
+                </a>
+                <!-- Inactive Tabs -->
+                <a class="flex items-center gap-3 px-3 py-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high font-telemetry-md text-telemetry-md transition-colors duration-150"
+                    href="#">
+                    <span class="material-symbols-outlined text-lg">water_drop</span>
+                    <span class="">GPM IMERG</span>
+                </a>
+                <a class="flex items-center gap-3 px-3 py-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high font-telemetry-md text-telemetry-md transition-colors duration-150"
+                    href="#">
+                    <span class="material-symbols-outlined text-lg">forest</span>
+                    <span class="">MODIS NDVI</span>
+                </a>
+                <a class="flex items-center gap-3 px-3 py-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high font-telemetry-md text-telemetry-md transition-colors duration-150"
+                    href="#">
+                    <span class="material-symbols-outlined text-lg">satellite</span>
+                    <span class="">Sentinel-1 SAR</span>
+                </a>
+                <a class="flex items-center gap-3 px-3 py-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high font-telemetry-md text-telemetry-md transition-colors duration-150"
+                    href="#">
+                    <span class="material-symbols-outlined text-lg">thermostat</span>
+                    <span class="">Soil Temperature</span>
+                </a>
+                <a class="flex items-center gap-3 px-3 py-2 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high font-telemetry-md text-telemetry-md transition-colors duration-150"
+                    href="#">
+                    <span class="material-symbols-outlined text-lg">warning</span>
+                    <span class="">Anomaly Matrix</span>
+                    <span
+                        class="ml-auto text-label-mono-xs font-label-mono-xs text-error bg-error/10 px-1 py-0.5 rounded">!</span>
+                </a>
+            </div>
+            <!-- Tactical Rail Footer -->
+            <div class="px-3 pt-3 border-t border-outline-variant space-y-1">
+                <a class="flex items-center gap-3 px-3 py-1.5 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high font-telemetry-md text-telemetry-md rounded transition-colors duration-150"
+                    href="#">
+                    <span class="material-symbols-outlined text-base">vital_signs</span>
+                    <span class="">System Health</span>
+                    <span class="ml-auto w-2 h-2 rounded-full bg-primary"></span>
+                </a>
+                <a class="flex items-center gap-3 px-3 py-1.5 text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high font-telemetry-md text-telemetry-md rounded transition-colors duration-150"
+                    href="#">
+                    <span class="material-symbols-outlined text-base">tune</span>
+                    <span class="">Calibration</span>
+                </a>
+            </div>
+        </aside>
+        <!-- Center Analytics Canvas -->
+        <main class="flex-1 overflow-y-auto p-4 lg:p-6 space-y-6 bg-surface-container-lowest">
+            <!-- Operational Context & Actions Subheader -->
+            <div
+                class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-2 border-b border-outline-variant">
+                <div>
+                    <div class="flex items-center gap-3">
+                        <h1 class="text-headline-lg font-headline-lg text-on-surface tracking-tight">Root-Zone Soil
+                            Moisture &amp; Hydrological Deficit</h1>
+                        <span
+                            class="font-label-mono-xs text-label-mono-xs uppercase px-2 py-0.5 rounded bg-surface-container-high text-secondary border border-outline-variant">L4_SM_gpc
+                            Assimilation</span>
+                    </div>
+                    <p class="text-body-sm font-body-sm text-on-surface-variant mt-0.5">Coupled Ensemble Kalman Filter
+                        (EnKF) assimilation of SMAP L-band radiometry with GEOS-5 Catchment Land Surface Model.</p>
+                </div>
+                <!-- Secondary Action Buttons Bar -->
+                <div class="flex items-center gap-2 self-start md:self-auto">
+                    <button
+                        class="flex items-center gap-2 px-3 py-1.5 rounded bg-surface-container border border-outline-variant text-on-surface font-body-sm text-body-sm hover:bg-surface-container-high transition-colors">
+                        <span class="material-symbols-outlined text-base text-primary">sync</span>
+                        Refresh Orbital Feed
+                    </button>
+                    <button
+                        class="flex items-center gap-2 px-3.5 py-1.5 rounded bg-surface-container-high border border-outline-variant text-on-surface font-body-sm text-body-sm hover:border-primary transition-colors">
+                        <span class="material-symbols-outlined text-base text-secondary">file_download</span>
+                        Export NetCDF / GeoTIFF
+                    </button>
+                </div>
+            </div>
+            <!-- ================= TOP METRICS ROW (2-Column High-Contrast Cards) ================= -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-6">
+                <!-- CARD 1: NASA SMAP Root-Zone Soil Moisture -->
+                <div
+                    class="bg-surface-container-low border border-outline-variant rounded-lg p-6 flex flex-col justify-between relative overflow-hidden">
+                    <div
+                        class="absolute top-0 right-0 w-32 h-32 bg-secondary/5 blur-2xl pointer-events-none rounded-full">
+                    </div>
+                    <div>
+                        <!-- Card Header -->
+                        <div class="flex items-center justify-between mb-3">
+                            <div class="flex items-center gap-2 text-on-surface-variant font-headline-sm text-body-md">
+                                <span class="material-symbols-outlined text-primary text-xl">satellite_alt</span>
+                                <span class="text-on-surface-variant font-medium">NASA SMAP: Root-Zone Soil
+                                    Moisture</span>
+                            </div>
+                            <span
+                                class="flex items-center gap-1.5 px-2 py-0.5 rounded bg-secondary/10 border border-secondary/30 text-secondary text-label-mono-xs font-label-mono-xs">
+                                <span class="material-symbols-outlined text-xs">arrow_downward</span>
+                                DEFICIT: -32%
+                            </span>
+                        </div>
+                        <!-- Primary Metric Display -->
+                        <div class="flex items-baseline gap-3 mt-1">
+                            <span class="text-headline-xl font-headline-xl text-on-surface tracking-tight">Low</span>
+                            <span class="text-secondary font-headline-md text-headline-md">(32% below baseline)</span>
+                        </div>
+                        <!-- Quantitative Sub-row -->
+                        <div class="mt-4 flex items-center gap-4 text-body-sm">
+                            <div class="flex items-baseline gap-1.5">
+                                <span class="text-on-surface-variant font-body-sm">Current VWC:</span>
+                                <span class="font-telemetry-lg text-telemetry-lg text-primary font-bold">0.18</span>
+                                <span class="font-label-mono text-label-mono-xs text-on-surface-variant">m³/m³</span>
+                            </div>
+                            <span class="text-outline">|</span>
+                            <div class="flex items-baseline gap-1.5 text-on-surface-variant">
+                                <span class="">Norm:</span>
+                                <span class="font-telemetry-md text-telemetry-md text-on-surface">0.265 m³/m³</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Technical Metadata Footer -->
+                    <div
+                        class="mt-6 pt-3 border-t border-outline-variant/60 flex items-center justify-between text-label-mono-xs font-label-mono-xs text-on-surface-variant">
+                        <span class="">DEPTH: 0–100cm PROFILE</span>
+                        <span class="text-primary/90">PRODUCT: L4_SM_gpc (v7.2)</span>
+                        <span class="">UNCERTAINTY: ±0.024</span>
+                    </div>
+                </div>
+                <!-- CARD 2: NASA GPM 30-Day Rainfall Anomaly -->
+                <div
+                    class="bg-surface-container-low border border-outline-variant rounded-lg p-6 flex flex-col justify-between relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-error/5 blur-2xl pointer-events-none rounded-full">
+                    </div>
+                    <div>
+                        <!-- Card Header -->
+                        <div class="flex items-center justify-between mb-3">
+                            <div class="flex items-center gap-2 text-on-surface-variant font-headline-sm text-body-md">
+                                <span class="material-symbols-outlined text-primary text-xl">water_drop</span>
+                                <span class="text-on-surface-variant font-medium">NASA GPM: 30-Day Rainfall
+                                    Anomaly</span>
+                            </div>
+                            <span
+                                class="flex items-center gap-1.5 px-2 py-0.5 rounded bg-error/10 border border-error/30 text-error text-label-mono-xs font-label-mono-xs">
+                                <span class="material-symbols-outlined text-xs">arrow_downward</span>
+                                ANOMALY -42.0%
+                            </span>
+                        </div>
+                        <!-- Primary Metric Display -->
+                        <div class="flex items-baseline gap-3 mt-1">
+                            <span class="text-headline-xl font-headline-xl text-error tracking-tight">-45mm
+                                deficit</span>
+                            <span class="text-on-surface-variant text-body-sm font-label-mono">METEOROLOGICAL
+                                DROUGHT</span>
+                        </div>
+                        <!-- Quantitative Sub-row -->
+                        <div class="mt-4 flex items-center gap-4 text-body-sm">
+                            <div class="flex items-baseline gap-1.5">
+                                <span class="text-on-surface-variant font-body-sm">Observed:</span>
+                                <span class="font-telemetry-lg text-telemetry-lg text-on-surface font-bold">62</span>
+                                <span class="font-label-mono text-label-mono-xs text-on-surface-variant">mm</span>
+                            </div>
+                            <span class="text-outline">|</span>
+                            <div class="flex items-baseline gap-1.5 text-on-surface-variant">
+                                <span class="">30-Yr Climatology:</span>
+                                <span class="font-telemetry-md text-telemetry-md text-on-surface">107 mm</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Technical Metadata Footer -->
+                    <div
+                        class="mt-6 pt-3 border-t border-outline-variant/60 flex items-center justify-between text-label-mono-xs font-label-mono-xs text-on-surface-variant">
+                        <span class="">TEMPORAL WINDOW: 30-DAY RUNNING</span>
+                        <span class="text-primary/90">PRODUCT: IMERG Final Precipitation</span>
+                        <span class="">GAUGE-CALIBRATED: TRUE</span>
+                    </div>
+                </div>
+            </div>
+            <!-- ================= MAIN CHART SECTION ================= -->
+            <section class="bg-surface-container-low border border-outline-variant rounded-lg p-6 lg:p-8 space-y-6">
+                <!-- Chart Controls Header & Custom Legends -->
+                <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+                    <div>
+                        <div class="flex items-center gap-2">
+                            <h2 class="text-headline-md font-headline-md text-on-surface">Root-Zone Soil Moisture Trend
+                            </h2>
+                            <span
+                                class="font-label-mono-xs text-label-mono-xs px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant">90-Day
+                                History &amp; 21-Day Forecast</span>
+                        </div>
+                        <p class="text-body-sm text-on-surface-variant mt-1">Volumetric Water Content [m³/m³] trajectory
+                            across top 100cm root zone horizon.</p>
+                    </div>
+                    <!-- Time Range Selector Toggle -->
+                    <div
+                        class="flex items-center bg-surface-container-lowest border border-outline-variant rounded p-1 self-start lg:self-auto font-label-mono text-label-mono-xs">
+                        <button
+                            class="px-2.5 py-1 rounded text-on-surface-variant hover:text-on-surface transition-colors">30D</button>
+                        <button
+                            class="px-2.5 py-1 rounded text-on-surface-variant hover:text-on-surface transition-colors">60D</button>
+                        <button
+                            class="px-2.5 py-1 rounded bg-primary-container text-on-primary-container font-semibold transition-colors shadow-sm">90D+Forecast</button>
+                        <button
+                            class="px-2.5 py-1 rounded text-on-surface-variant hover:text-on-surface transition-colors">1Y</button>
+                    </div>
+                </div>
+                <!-- Legend Pill Matrix -->
+                <div
+                    class="flex flex-wrap items-center gap-x-6 gap-y-2 py-2 px-3 rounded bg-surface-container-lowest/80 border border-outline-variant/50 text-xs">
+                    <div class="flex items-center gap-2">
+                        <span class="w-4 h-0.5 bg-primary-container rounded"></span>
+                        <span class="text-on-surface font-body-sm">Historical Observation (SMAP L4)</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <span class="w-4 h-0.5 border-b-2 border-dashed border-secondary"></span>
+                        <span class="text-on-surface font-body-sm">21-Day Predictive Depletion (GEOS-FP / EnKF)</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <span class="w-4 h-0.5 border-b-2 border-dotted border-error"></span>
+                        <span class="text-on-surface font-body-sm">Critical Wilting Point (0.15 m³/m³)</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <span class="w-4 h-0.5 border-b-2 border-dotted border-primary"></span>
+                        <span class="text-on-surface font-body-sm">Field Capacity Baseline (0.28 m³/m³)</span>
+                    </div>
+                </div>
+                <!-- Primary SVG High-Density Operational Chart -->
+                <div
+                    class="relative w-full h-80 sm:h-96 bg-surface-container-lowest rounded border border-outline-variant/60 p-2 sm:p-4 overflow-hidden">
+                    <svg class="w-full h-full overflow-visible" preserveAspectRatio="none" viewBox="0 0 1000 360">
+                        <defs>
+                            <!-- Historical Area Fill Gradient -->
+                            <linearGradient id="emeraldGradient" x1="0" x2="0" y1="0" y2="1">
+                                <stop offset="0%" stop-color="#10b981" stop-opacity="0.28"></stop>
+                                <stop offset="100%" stop-color="#10b981" stop-opacity="0.0"></stop>
+                            </linearGradient>
+                            <!-- Forecast Warning Area Fill -->
+                            <linearGradient id="forecastGradient" x1="0" x2="0" y1="0" y2="1">
+                                <stop offset="0%" stop-color="#ffb95f" stop-opacity="0.15"></stop>
+                                <stop offset="100%" stop-color="#ffb95f" stop-opacity="0.0"></stop>
+                            </linearGradient>
+                        </defs>
+                        <!-- Horizontal Gridlines & Y-Axis Reference Labels -->
+                        <!-- 0.35 -->
+                        <line stroke="#1F2937" stroke-dasharray="2 4" stroke-opacity="0.6" stroke-width="1" x1="60"
+                            x2="980" y1="30" y2="30"></line>
+                        <text fill="#86948a" font-family="JetBrains Mono" font-size="11" text-anchor="end" x="50"
+                            y="34">0.35</text>
+                        <!-- 0.30 -->
+                        <line stroke="#1F2937" stroke-dasharray="2 4" stroke-opacity="0.6" stroke-width="1" x1="60"
+                            x2="980" y1="80" y2="80"></line>
+                        <text fill="#86948a" font-family="JetBrains Mono" font-size="11" text-anchor="end" x="50"
+                            y="84">0.30</text>
+                        <!-- 0.28 (Field Capacity Baseline) -->
+                        <line stroke="#4edea3" stroke-dasharray="4 4" stroke-opacity="0.6" stroke-width="1.2" x1="60"
+                            x2="980" y1="100" y2="100"></line>
+                        <text fill="#4edea3" font-family="JetBrains Mono" font-size="10" text-anchor="end" x="975"
+                            y="94">FIELD CAPACITY (0.28)</text>
+                        <!-- 0.25 -->
+                        <line stroke="#1F2937" stroke-dasharray="2 4" stroke-opacity="0.6" stroke-width="1" x1="60"
+                            x2="980" y1="130" y2="130"></line>
+                        <text fill="#86948a" font-family="JetBrains Mono" font-size="11" text-anchor="end" x="50"
+                            y="134">0.25</text>
+                        <!-- 0.20 -->
+                        <line stroke="#1F2937" stroke-dasharray="2 4" stroke-opacity="0.6" stroke-width="1" x1="60"
+                            x2="980" y1="180" y2="180"></line>
+                        <text fill="#86948a" font-family="JetBrains Mono" font-size="11" text-anchor="end" x="50"
+                            y="184">0.20</text>
+                        <!-- 0.15 (Critical Wilting Point Threshold) -->
+                        <line stroke="#ffb4ab" stroke-dasharray="3 3" stroke-width="1.5" x1="60" x2="980" y1="230"
+                            y2="230"></line>
+                        <text fill="#ffb4ab" font-family="JetBrains Mono" font-size="11" text-anchor="end" x="50"
+                            y="234">0.15</text>
+                        <rect fill="#93000a" fill-opacity="0.4" height="18" rx="2" stroke="#ffb4ab" stroke-width="0.8"
+                            width="175" x="800" y="218"></rect>
+                        <text fill="#ffdad6" font-family="JetBrains Mono" font-size="9" font-weight="600"
+                            text-anchor="middle" x="887" y="231">CRITICAL WILTING THRESHOLD</text>
+                        <!-- 0.10 -->
+                        <line stroke="#1F2937" stroke-dasharray="2 4" stroke-opacity="0.6" stroke-width="1" x1="60"
+                            x2="980" y1="280" y2="280"></line>
+                        <text fill="#86948a" font-family="JetBrains Mono" font-size="11" text-anchor="end" x="50"
+                            y="284">0.10</text>
+                        <!-- Vertical Time Divider: TODAY / ORBITAL PASS at X=700 -->
+                        <line stroke="#4edea3" stroke-dasharray="4 4" stroke-opacity="0.8" stroke-width="1.5" x1="700"
+                            x2="700" y1="20" y2="300"></line>
+                        <rect fill="#003824" height="18" rx="9" stroke="#4edea3" stroke-width="1" width="110" x="645"
+                            y="10"></rect>
+                        <circle cx="655" cy="19" fill="#4edea3" r="3"></circle>
+                        <text fill="#4edea3" font-family="JetBrains Mono" font-size="9" font-weight="600"
+                            text-anchor="middle" x="702" y="22.5">ORBITAL PASS [TODAY]</text>
+                        <!-- Historical Curve (X=60 to X=700) -->
+                        <!-- Area under historical curve -->
+                        <path d="M 60,300 
+                     L 60,110 
+                     Q 120,95 180,120 
+                     T 300,105 
+                     T 420,135 
+                     T 540,165 
+                     T 620,175 
+                     L 700,200 
+                     L 700,300 Z" fill="url(#emeraldGradient)"></path>
+                        <!-- Historical Stroke -->
+                        <path d="M 60,110 
+                     Q 120,95 180,120 
+                     T 300,105 
+                     T 420,135 
+                     T 540,165 
+                     T 620,175 
+                     L 700,200" fill="none" stroke="#10b981" stroke-linecap="round" stroke-width="2.5"></path>
+                        <!-- Predictive Depletion Line (X=700 to X=960) sloped downward breaching 0.15 (Y=230) at X=840 -->
+                        <!-- Forecast Area -->
+                        <path d="M 700,300 
+                     L 700,200 
+                     Q 770,215 840,230 
+                     T 960,252 
+                     L 960,300 Z" fill="url(#forecastGradient)"></path>
+                        <path d="M 700,200 
+                     Q 770,215 840,230 
+                     T 960,252" fill="none" stroke="#ffb95f" stroke-dasharray="6 4" stroke-linecap="round"
+                            stroke-width="2.5"></path>
+                        <!-- Breach Point Indicator Circle at X=840, Y=230 (+12 Days) -->
+                        <circle cx="840" cy="230" fill="#ffb4ab" r="4.5" stroke="#080f17" stroke-width="2"></circle>
+                        <rect fill="#151c25" height="18" rx="2" stroke="#ffb4ab" stroke-width="0.8" width="150" x="765"
+                            y="242"></rect>
+                        <text fill="#ffb4ab" font-family="JetBrains Mono" font-size="9" font-weight="600"
+                            text-anchor="middle" x="840" y="254">Wilting Threshold Breach (+12 Days)</text>
+                        <!-- Observation Node at Current Orbit (X=700, Y=200) -->
+                        <circle cx="700" cy="200" fill="#10b981" r="5" stroke="#080f17" stroke-width="2"></circle>
+                        <circle cx="700" cy="200" fill="none" r="9" stroke="#10b981" stroke-opacity="0.5"
+                            stroke-width="1"></circle>
+                        <!-- Interactive Floating Tooltip Callout at Forecast Day +14 (X=865, Y=236) -->
+                        <g transform="translate(865, 150)">
+                            <line stroke="#ffb95f" stroke-dasharray="2 2" stroke-width="1" x1="0" x2="0" y1="85"
+                                y2="46"></line>
+                            <rect fill="#192029" filter="drop-shadow(0 4px 6px rgba(0,0,0,0.5))" height="46" rx="4"
+                                stroke="#ee9800" stroke-width="1" width="210" x="-105" y="0"></rect>
+                            <text fill="#dce3f0" font-family="Inter" font-size="10" font-weight="600" x="-95"
+                                y="18">Forecast Day +14: 0.138 m³/m³</text>
+                            <circle cx="-90" cy="32" fill="#ffb95f" r="3"></circle>
+                            <text fill="#ffb95f" font-family="JetBrains Mono" font-size="10" font-weight="600" x="-80"
+                                y="35">-48% Root Stress Alert</text>
+                        </g>
+                        <!-- X-Axis Timeline Labels -->
+                        <line stroke="#1F2937" stroke-width="1.2" x1="60" x2="980" y1="300" y2="300"></line>
+                        <text fill="#86948a" font-family="JetBrains Mono" font-size="11" text-anchor="middle" x="120"
+                            y="325">01 NOV</text>
+                        <line stroke="#86948a" stroke-width="1" x1="120" x2="120" y1="300" y2="306"></line>
+                        <text fill="#86948a" font-family="JetBrains Mono" font-size="11" text-anchor="middle" x="260"
+                            y="325">21 NOV</text>
+                        <line stroke="#86948a" stroke-width="1" x1="260" x2="260" y1="300" y2="306"></line>
+                        <text fill="#86948a" font-family="JetBrains Mono" font-size="11" text-anchor="middle" x="400"
+                            y="325">12 DEC</text>
+                        <line stroke="#86948a" stroke-width="1" x1="400" x2="400" y1="300" y2="306"></line>
+                        <text fill="#86948a" font-family="JetBrains Mono" font-size="11" text-anchor="middle" x="550"
+                            y="325">02 JAN</text>
+                        <line stroke="#86948a" stroke-width="1" x1="550" x2="550" y1="300" y2="306"></line>
+                        <text fill="#4edea3" font-family="JetBrains Mono" font-size="11" font-weight="600"
+                            text-anchor="middle" x="700" y="325">TODAY (24 JAN)</text>
+                        <line stroke="#4edea3" stroke-width="1.5" x1="700" x2="700" y1="300" y2="308"></line>
+                        <text fill="#ffb95f" font-family="JetBrains Mono" font-size="11" text-anchor="middle" x="830"
+                            y="325">05 FEB (+12D)</text>
+                        <line stroke="#ffb95f" stroke-width="1" x1="830" x2="830" y1="300" y2="306"></line>
+                        <text fill="#ffb95f" font-family="JetBrains Mono" font-size="11" text-anchor="middle" x="940"
+                            y="325">14 FEB (+21D)</text>
+                        <line stroke="#ffb95f" stroke-width="1" x1="940" x2="940" y1="300" y2="306"></line>
+                    </svg>
+                </div>
+                <!-- ================= BOTTOM TELEMETRY STRIP (4 Micro Data Pods) ================= -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-3 pt-4 border-t border-outline-variant">
+                    <!-- Metric 1: Sensor Confidence -->
+                    <div class="p-3 rounded bg-surface-container border border-outline-variant">
+                        <div class="flex items-center justify-between">
+                            <span class="text-label-mono-xs font-label-mono-xs text-on-surface-variant uppercase">SENSOR
+                                CONFIDENCE</span>
+                            <span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                        </div>
+                        <div class="mt-1 flex items-baseline gap-1">
+                            <span class="text-telemetry-lg font-telemetry-lg text-on-surface font-bold">94.2%</span>
+                            <span class="text-label-mono-xs font-label-mono-xs text-on-surface-variant">NOMINAL</span>
+                        </div>
+                        <div class="mt-1 text-label-mono-xs font-label-mono-xs text-on-surface-variant truncate">EnKF
+                            Chi-Square: 1.02</div>
+                    </div>
+                    <!-- Metric 2: Orbit Revisit -->
+                    <div class="p-3 rounded bg-surface-container border border-outline-variant">
+                        <div class="flex items-center justify-between">
+                            <span class="text-label-mono-xs font-label-mono-xs text-on-surface-variant uppercase">ORBIT
+                                REVISIT</span>
+                            <span class="text-label-mono-xs font-label-mono-xs text-primary font-mono">T-18h</span>
+                        </div>
+                        <div class="mt-1 flex items-baseline gap-1">
+                            <span class="text-telemetry-lg font-telemetry-lg text-on-surface font-bold">18 hrs</span>
+                            <span class="text-label-mono-xs font-label-mono-xs text-primary">DESCENDING</span>
+                        </div>
+                        <div class="mt-1 text-label-mono-xs font-label-mono-xs text-on-surface-variant truncate">
+                            Sentinel-1C &amp; SMAP-L</div>
+                    </div>
+                    <!-- Metric 3: Evapotranspiration Flux -->
+                    <div class="p-3 rounded bg-surface-container border border-outline-variant">
+                        <div class="flex items-center justify-between">
+                            <span
+                                class="text-label-mono-xs font-label-mono-xs text-on-surface-variant uppercase">EVAPOTRANSPIRATION
+                                FLUX</span>
+                            <span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                        </div>
+                        <div class="mt-1 flex items-baseline gap-1">
+                            <span class="text-telemetry-lg font-telemetry-lg text-secondary font-bold">4.8</span>
+                            <span class="text-label-mono-xs font-label-mono-xs text-on-surface-variant">mm/day</span>
+                        </div>
+                        <div class="mt-1 text-label-mono-xs font-label-mono-xs text-on-surface-variant truncate">High
+                            Atmospheric Vapor Demand</div>
+                    </div>
+                    <!-- Metric 4: Soil Texture Class -->
+                    <div class="p-3 rounded bg-surface-container border border-outline-variant">
+                        <div class="flex items-center justify-between">
+                            <span class="text-label-mono-xs font-label-mono-xs text-on-surface-variant uppercase">SOIL
+                                TAXONOMY</span>
+                            <span class="text-label-mono-xs font-label-mono-xs text-on-surface-variant">USDA</span>
+                        </div>
+                        <div class="mt-1 flex items-baseline gap-1">
+                            <span
+                                class="text-telemetry-md font-telemetry-md text-on-surface font-semibold truncate">Clay-Loam</span>
+                        </div>
+                        <div class="mt-1 text-label-mono-xs font-label-mono-xs text-on-surface-variant truncate">Typic
+                            Hapludox (Latossolo)</div>
+                    </div>
+                </div>
+            </section>
+            <!-- Operational Telemetry Log Strip -->
+            <div
+                class="flex flex-col sm:flex-row items-center justify-between p-3 rounded bg-surface-container-low border border-outline-variant text-label-mono-xs font-label-mono-xs text-on-surface-variant gap-2">
+                <div class="flex items-center gap-3">
+                    <span class="flex items-center gap-1.5 text-primary">
+                        <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                        SYSTEM DISPATCH ONLINE
+                    </span>
+                    <span class="text-outline">|</span>
+                    <span class="">INGESTION NODE: GSFC-GMAO-09</span>
+                    <span class="text-outline hidden md:inline">|</span>
+                    <span class="hidden md:inline">LATENCY: 142ms</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <span class="">DATA RELEASE: 2025-01-24T14:00:00Z</span>
+                    <span class="px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface">QA/QC PASSED</span>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>
