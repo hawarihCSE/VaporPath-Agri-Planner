@@ -1,0 +1,160 @@
+[gd_scene format=3 uid="uid://b4521qfl72n3a"]
+
+[ext_resource type="Texture2D" uid="uid://b3oda4aes3bog" path="res://assests/backgrounds/Country line.jpg" id="1_4x6q2"]
+[ext_resource type="Texture2D" uid="uid://2u18bx4htluj" path="res://assests/characters/Download_premium_image_of_Figurine_smiling_farmer_agriculture__by_icee_about_cartoon__plant__person__man__and_illustration_12184358-removebg-preview.png" id="2_ln5n7"]
+[ext_resource type="StyleBox" uid="uid://dbhr8tbqom30r" path="res://assests/ui/button_normal.tres" id="2_sp7f4"]
+[ext_resource type="StyleBox" uid="uid://bw582rob68ii2" path="res://button_normal2.tres" id="3_20p1b"]
+[ext_resource type="StyleBox" uid="uid://baqk43phxd4bn" path="res://button_normal1.tres" id="4_rajkl"]
+[ext_resource type="Texture2D" uid="uid://uw1ers5ft5db" path="res://assests/backgrounds/download__2_-removebg-preview.png" id="6_d8g8k"]
+[ext_resource type="Script" uid="uid://ddfwiualt85bb" path="res://scenes/screen_2.gd" id="7_screen2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2wq7a"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.38431373, 0.8509804, 0.76862746, 1)
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
+
+[node name="Screen2" type="Control" unique_id=1088842776]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("7_screen2")
+
+[node name="Background" type="TextureRect" parent="." unique_id=621242125]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_4x6q2")
+
+[node name="Title" type="Label" parent="." unique_id=352705352]
+layout_mode = 0
+offset_left = 379.0
+offset_top = 23.0
+offset_right = 804.0
+offset_bottom = 81.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 42
+text = "CHOOSE YOUR FARM"
+
+[node name="BrazilButton" type="Button" parent="." unique_id=1791966420]
+layout_mode = 0
+offset_left = 750.0
+offset_top = 300.0
+offset_right = 880.0
+offset_bottom = 358.0
+theme_override_colors/font_color = Color(0.09019608, 0.29411766, 0.2627451, 1)
+theme_override_colors/font_hover_color = Color(0.0627451, 0.23529412, 0.20784314, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.0627451, 0.23529412, 0.20784314, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = ExtResource("2_sp7f4")
+theme_override_styles/pressed = ExtResource("3_20p1b")
+theme_override_styles/hover = ExtResource("4_rajkl")
+text = "🇧🇷 BRAZIL
+
+"
+
+[node name="ArgentinaButton" type="Button" parent="." unique_id=297777829]
+layout_mode = 0
+offset_left = 970.0
+offset_top = 300.0
+offset_right = 1155.0
+offset_bottom = 358.0
+theme_override_colors/font_color = Color(0.09019608, 0.29411766, 0.2627451, 1)
+theme_override_colors/font_hover_color = Color(0.09019608, 0.29411766, 0.2627451, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.09019608, 0.29411766, 0.2627451, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = ExtResource("2_sp7f4")
+text = "🇦🇷 ARGENTINA
+
+"
+
+[node name="BoliviaButton" type="Button" parent="." unique_id=617747217]
+layout_mode = 0
+offset_left = 750.0
+offset_top = 380.0
+offset_right = 895.0
+offset_bottom = 438.0
+theme_override_colors/font_color = Color(0.09019608, 0.29411766, 0.2627451, 1)
+theme_override_colors/font_hover_color = Color(0.09019608, 0.29411766, 0.2627451, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.09019608, 0.29411766, 0.2627451, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = ExtResource("2_sp7f4")
+text = "🇧🇴 BOLIVIA
+
+"
+
+[node name="ParaguayButton" type="Button" parent="." unique_id=1149613774]
+layout_mode = 0
+offset_left = 970.0
+offset_top = 380.0
+offset_right = 1144.0
+offset_bottom = 438.0
+theme_override_colors/font_color = Color(0.09019608, 0.29411766, 0.2627451, 1)
+theme_override_colors/font_hover_color = Color(0.09019608, 0.29411766, 0.2627451, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.09019608, 0.29411766, 0.2627451, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = ExtResource("2_sp7f4")
+text = "🇵🇾 PARAGUAY
+"
+
+[node name="Farmer" type="TextureRect" parent="." unique_id=677878713]
+layout_mode = 0
+offset_left = -26.0
+offset_top = 77.0
+offset_right = 382.0
+offset_bottom = 689.0
+texture = ExtResource("2_ln5n7")
+
+[node name="DialogueBox" type="Panel" parent="." unique_id=2023743587]
+layout_mode = 0
+offset_left = 317.0
+offset_top = 513.0
+offset_right = 717.0
+offset_bottom = 645.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_2wq7a")
+
+[node name="DialogueText" type="Label" parent="DialogueBox" unique_id=823354925]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 18.0
+offset_right = 375.0
+offset_bottom = 114.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Show me where your farm is."
+autowrap_mode = 2
+vertical_alignment = 1
+
+[node name="FarmMap" type="TextureRect" parent="." unique_id=1994301846]
+layout_mode = 0
+offset_left = 367.0
+offset_top = 55.0
+offset_right = 817.0
+offset_bottom = 721.0
+texture = ExtResource("6_d8g8k")
+
+[node name="ContinueButton" type="Button" parent="." unique_id=841205101]
+layout_mode = 0
+offset_left = 943.0
+offset_top = 17.0
+offset_right = 1143.0
+offset_bottom = 82.0
+theme_override_colors/font_color = Color(0.09019608, 0.29411766, 0.2627451, 1)
+theme_override_colors/font_hover_color = Color(0.09019608, 0.29411766, 0.2627451, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.09019608, 0.29411766, 0.2627451, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = ExtResource("2_sp7f4")
+text = "CONTINUE →
+"

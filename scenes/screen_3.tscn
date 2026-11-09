@@ -1,0 +1,158 @@
+[gd_scene format=3 uid="uid://d3farmscannode"]
+
+[ext_resource type="Texture2D" uid="uid://b3oda4aes3bog" path="res://assests/backgrounds/Country line.jpg" id="1_bg"]
+[ext_resource type="Texture2D" uid="uid://2u18bx4htluj" path="res://assests/characters/Download_premium_image_of_Figurine_smiling_farmer_agriculture__by_icee_about_cartoon__plant__person__man__and_illustration_12184358-removebg-preview.png" id="2_farmer"]
+[ext_resource type="StyleBox" uid="uid://dbhr8tbqom30r" path="res://assests/ui/button_normal.tres" id="3_btn_normal"]
+[ext_resource type="StyleBox" uid="uid://bw582rob68ii2" path="res://button_normal2.tres" id="4_btn_pressed"]
+[ext_resource type="StyleBox" uid="uid://baqk43phxd4bn" path="res://button_normal1.tres" id="5_btn_hover"]
+[ext_resource type="Script" path="res://scenes/screen_3.gd" id="6_script"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_box"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.38431373, 0.8509804, 0.76862746, 1)
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
+
+[node name="Screen3" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("6_script")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_bg")
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 0
+offset_left = 379.0
+offset_top = 23.0
+offset_right = 804.0
+offset_bottom = 81.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 42
+text = "NASA FARM SCAN"
+
+[node name="ContinueButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 943.0
+offset_top = 17.0
+offset_right = 1143.0
+offset_bottom = 82.0
+theme_override_colors/font_color = Color(0.09019608, 0.29411766, 0.2627451, 1)
+theme_override_colors/font_hover_color = Color(0.09019608, 0.29411766, 0.2627451, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.09019608, 0.29411766, 0.2627451, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = ExtResource("3_btn_normal")
+theme_override_styles/pressed = ExtResource("4_btn_pressed")
+theme_override_styles/hover = ExtResource("5_btn_hover")
+text = "CONTINUE →
+"
+
+[node name="Farmer" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -26.0
+offset_top = 77.0
+offset_right = 382.0
+offset_bottom = 689.0
+texture = ExtResource("2_farmer")
+
+[node name="InfoBox" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 420.0
+offset_top = 125.0
+offset_right = 950.0
+offset_bottom = 445.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_box")
+
+[node name="ScanTitle" type="Label" parent="InfoBox"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 22.0
+offset_right = 500.0
+offset_bottom = 56.0
+theme_override_colors/font_color = Color(0.09019608, 0.29411766, 0.2627451, 1)
+theme_override_font_sizes/font_size = 22
+text = "FARM SCAN: BRAZIL"
+
+[node name="Divider" type="ColorRect" parent="InfoBox"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 62.0
+offset_right = 500.0
+offset_bottom = 64.0
+color = Color(0.38431373, 0.8509804, 0.76862746, 0.6)
+
+[node name="Item1" type="Label" parent="InfoBox"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 82.0
+offset_right = 500.0
+offset_bottom = 122.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "• Soil Moisture: 38% (SMAP)"
+
+[node name="Item2" type="Label" parent="InfoBox"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 134.0
+offset_right = 500.0
+offset_bottom = 174.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "• Rainfall Anomaly: -14% (GPM)"
+
+[node name="Item3" type="Label" parent="InfoBox"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 186.0
+offset_right = 500.0
+offset_bottom = 226.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "• Vegetation Stress: 62% (ECOSTRESS)"
+
+[node name="Disclaimer" type="Label" parent="InfoBox"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 265.0
+offset_right = 500.0
+offset_bottom = 295.0
+theme_override_colors/font_color = Color(0.35, 0.45, 0.42, 1)
+theme_override_font_sizes/font_size = 14
+text = "* Illustrative NASA-derived values"
+
+[node name="DialogueBox" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 317.0
+offset_top = 490.0
+offset_right = 900.0
+offset_bottom = 635.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_box")
+
+[node name="DialogueText" type="Label" parent="DialogueBox"]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 18.0
+offset_right = 558.0
+offset_bottom = 127.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Let's scan your farm! NASA satellites help us understand soil moisture, rainfall, and crop stress."
+autowrap_mode = 2
+vertical_alignment = 1

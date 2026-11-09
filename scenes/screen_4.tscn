@@ -1,0 +1,486 @@
+[gd_scene format=3 uid="uid://d4moisturepath"]
+
+[ext_resource type="Texture2D" uid="uid://b3oda4aes3bog" path="res://assests/backgrounds/Country line.jpg" id="1_bg"]
+[ext_resource type="Texture2D" uid="uid://2u18bx4htluj" path="res://assests/characters/Download_premium_image_of_Figurine_smiling_farmer_agriculture__by_icee_about_cartoon__plant__person__man__and_illustration_12184358-removebg-preview.png" id="2_farmer"]
+[ext_resource type="StyleBox" uid="uid://dbhr8tbqom30r" path="res://assests/ui/button_normal.tres" id="3_btn_normal"]
+[ext_resource type="StyleBox" uid="uid://bw582rob68ii2" path="res://button_normal2.tres" id="4_btn_pressed"]
+[ext_resource type="StyleBox" uid="uid://baqk43phxd4bn" path="res://button_normal1.tres" id="5_btn_hover"]
+[ext_resource type="Script" path="res://scenes/screen_4.gd" id="6_script"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_box"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.38431373, 0.8509804, 0.76862746, 1)
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
+
+[sub_resource type="FontVariation" id="FontVariation_bold_title"]
+variation_embolden = 1.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_stage_initial"]
+bg_color = Color(1, 1, 1, 0.94)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.38431373, 0.8509804, 0.76862746, 0.6)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_illust_bg"]
+bg_color = Color(0.933333, 0.968627, 0.952941, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.38431373, 0.8509804, 0.76862746, 0.5)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[node name="Screen4" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("6_script")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_bg")
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 0
+offset_left = 340.0
+offset_top = 20.0
+offset_right = 880.0
+offset_bottom = 75.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 38
+text = "WHY IS MY FARM AT RISK?"
+
+[node name="TopContinueButton" type="Button" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 943.0
+offset_top = 17.0
+offset_right = 1143.0
+offset_bottom = 82.0
+theme_override_colors/font_color = Color(0.09019608, 0.29411766, 0.2627451, 1)
+theme_override_colors/font_hover_color = Color(0.0627451, 0.23529412, 0.20784314, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.0627451, 0.23529412, 0.20784314, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = ExtResource("3_btn_normal")
+theme_override_styles/pressed = ExtResource("4_btn_pressed")
+theme_override_styles/hover = ExtResource("5_btn_hover")
+text = "CONTINUE →
+"
+
+[node name="Farmer" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -26.0
+offset_top = 77.0
+offset_right = 382.0
+offset_bottom = 689.0
+texture = ExtResource("2_farmer")
+
+[node name="PathVisualizer" type="Control" parent="."]
+layout_mode = 0
+offset_left = 410.0
+offset_top = 95.0
+offset_right = 1100.0
+offset_bottom = 350.0
+
+[node name="StagesContainer" type="Control" parent="."]
+layout_mode = 0
+offset_left = 410.0
+offset_top = 95.0
+offset_right = 1100.0
+offset_bottom = 350.0
+
+[node name="Stage1" type="Panel" parent="StagesContainer"]
+layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 330.0
+offset_bottom = 115.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_stage_initial")
+
+[node name="IllustrationBox" type="Panel" parent="StagesContainer/Stage1"]
+clip_children = 2
+layout_mode = 0
+offset_left = 12.0
+offset_top = 12.0
+offset_right = 102.0
+offset_bottom = 102.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_illust_bg")
+
+[node name="Illustration" type="Control" parent="StagesContainer/Stage1/IllustrationBox"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="StageNumber" type="Label" parent="StagesContainer/Stage1"]
+layout_mode = 0
+offset_left = 112.0
+offset_top = 10.0
+offset_right = 320.0
+offset_bottom = 28.0
+theme_override_colors/font_color = Color(0.0862745, 0.380392, 0.32549, 1)
+theme_override_font_sizes/font_size = 11
+text = "1. MOISTURE SOURCE"
+
+[node name="StageTitle" type="Label" parent="StagesContainer/Stage1"]
+layout_mode = 0
+offset_left = 112.0
+offset_top = 28.0
+offset_right = 320.0
+offset_bottom = 54.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "Amazon Rainforest"
+
+[node name="StageDesc" type="Label" parent="StagesContainer/Stage1"]
+layout_mode = 0
+offset_left = 112.0
+offset_top = 56.0
+offset_right = 320.0
+offset_bottom = 106.0
+theme_override_colors/font_color = Color(0.188235, 0.309804, 0.278431, 1)
+theme_override_font_sizes/font_size = 11
+text = "Dense canopy releases massive vapor into the air through evapotranspiration."
+autowrap_mode = 2
+
+[node name="Stage2" type="Panel" parent="StagesContainer"]
+layout_mode = 0
+offset_left = 360.0
+offset_top = 0.0
+offset_right = 690.0
+offset_bottom = 115.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_stage_initial")
+
+[node name="IllustrationBox" type="Panel" parent="StagesContainer/Stage2"]
+clip_children = 2
+layout_mode = 0
+offset_left = 12.0
+offset_top = 12.0
+offset_right = 102.0
+offset_bottom = 102.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_illust_bg")
+
+[node name="Illustration" type="Control" parent="StagesContainer/Stage2/IllustrationBox"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="StageNumber" type="Label" parent="StagesContainer/Stage2"]
+layout_mode = 0
+offset_left = 112.0
+offset_top = 10.0
+offset_right = 320.0
+offset_bottom = 28.0
+theme_override_colors/font_color = Color(0.0862745, 0.380392, 0.32549, 1)
+theme_override_font_sizes/font_size = 11
+text = "2. MOISTURE MOVEMENT"
+
+[node name="StageTitle" type="Label" parent="StagesContainer/Stage2"]
+layout_mode = 0
+offset_left = 112.0
+offset_top = 28.0
+offset_right = 320.0
+offset_bottom = 54.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "Atmospheric Flying Rivers"
+
+[node name="StageDesc" type="Label" parent="StagesContainer/Stage2"]
+layout_mode = 0
+offset_left = 112.0
+offset_top = 56.0
+offset_right = 320.0
+offset_bottom = 106.0
+theme_override_colors/font_color = Color(0.188235, 0.309804, 0.278431, 1)
+theme_override_font_sizes/font_size = 11
+text = "High-altitude winds transport vapor corridors across the continent."
+autowrap_mode = 2
+
+[node name="Stage3" type="Panel" parent="StagesContainer"]
+layout_mode = 0
+offset_left = 360.0
+offset_top = 140.0
+offset_right = 690.0
+offset_bottom = 255.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_stage_initial")
+
+[node name="IllustrationBox" type="Panel" parent="StagesContainer/Stage3"]
+clip_children = 2
+layout_mode = 0
+offset_left = 12.0
+offset_top = 12.0
+offset_right = 102.0
+offset_bottom = 102.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_illust_bg")
+
+[node name="Illustration" type="Control" parent="StagesContainer/Stage3/IllustrationBox"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="StageNumber" type="Label" parent="StagesContainer/Stage3"]
+layout_mode = 0
+offset_left = 112.0
+offset_top = 10.0
+offset_right = 320.0
+offset_bottom = 28.0
+theme_override_colors/font_color = Color(0.0862745, 0.380392, 0.32549, 1)
+theme_override_font_sizes/font_size = 11
+text = "3. REGIONAL PRECIPITATION"
+
+[node name="StageTitle" type="Label" parent="StagesContainer/Stage3"]
+layout_mode = 0
+offset_left = 112.0
+offset_top = 28.0
+offset_right = 320.0
+offset_bottom = 54.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "Rainfall Condensation"
+
+[node name="StageDesc" type="Label" parent="StagesContainer/Stage3"]
+layout_mode = 0
+offset_left = 112.0
+offset_top = 56.0
+offset_right = 320.0
+offset_bottom = 106.0
+theme_override_colors/font_color = Color(0.188235, 0.309804, 0.278431, 1)
+theme_override_font_sizes/font_size = 11
+text = "Moisture condenses into rain clouds, sustaining seasonal crops."
+autowrap_mode = 2
+
+[node name="Stage4" type="Panel" parent="StagesContainer"]
+layout_mode = 0
+offset_left = 0.0
+offset_top = 140.0
+offset_right = 330.0
+offset_bottom = 255.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_stage_initial")
+
+[node name="IllustrationBox" type="Panel" parent="StagesContainer/Stage4"]
+clip_children = 2
+layout_mode = 0
+offset_left = 12.0
+offset_top = 12.0
+offset_right = 102.0
+offset_bottom = 102.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_illust_bg")
+
+[node name="Illustration" type="Control" parent="StagesContainer/Stage4/IllustrationBox"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="StageNumber" type="Label" parent="StagesContainer/Stage4"]
+layout_mode = 0
+offset_left = 112.0
+offset_top = 10.0
+offset_right = 320.0
+offset_bottom = 28.0
+theme_override_colors/font_color = Color(0.0862745, 0.380392, 0.32549, 1)
+theme_override_font_sizes/font_size = 11
+text = "4. YOUR FARM IMPACT"
+
+[node name="StageTitle" type="Label" parent="StagesContainer/Stage4"]
+layout_mode = 0
+offset_left = 112.0
+offset_top = 28.0
+offset_right = 320.0
+offset_bottom = 54.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "Soil Moisture & Crops"
+
+[node name="StageDesc" type="Label" parent="StagesContainer/Stage4"]
+layout_mode = 0
+offset_left = 112.0
+offset_top = 56.0
+offset_right = 320.0
+offset_bottom = 106.0
+theme_override_colors/font_color = Color(0.188235, 0.309804, 0.278431, 1)
+theme_override_font_sizes/font_size = 11
+text = "Vapor pathway disruptions leave farm soil dry and crops under strain."
+autowrap_mode = 2
+
+[node name="ControlsRow" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 540.0
+offset_top = 370.0
+offset_right = 970.0
+offset_bottom = 422.0
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="PlayButton" type="Button" parent="ControlsRow"]
+custom_minimum_size = Vector2(120, 48)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.09019608, 0.29411766, 0.2627451, 1)
+theme_override_colors/font_hover_color = Color(0.0627451, 0.23529412, 0.20784314, 1)
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = ExtResource("3_btn_normal")
+theme_override_styles/pressed = ExtResource("4_btn_pressed")
+theme_override_styles/hover = ExtResource("5_btn_hover")
+text = "▶ PLAY"
+
+[node name="PauseButton" type="Button" parent="ControlsRow"]
+custom_minimum_size = Vector2(120, 48)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.09019608, 0.29411766, 0.2627451, 1)
+theme_override_colors/font_hover_color = Color(0.0627451, 0.23529412, 0.20784314, 1)
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = ExtResource("3_btn_normal")
+theme_override_styles/pressed = ExtResource("4_btn_pressed")
+theme_override_styles/hover = ExtResource("5_btn_hover")
+text = "⏸ PAUSE"
+
+[node name="ReplayButton" type="Button" parent="ControlsRow"]
+custom_minimum_size = Vector2(120, 48)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.09019608, 0.29411766, 0.2627451, 1)
+theme_override_colors/font_hover_color = Color(0.0627451, 0.23529412, 0.20784314, 1)
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = ExtResource("3_btn_normal")
+theme_override_styles/pressed = ExtResource("4_btn_pressed")
+theme_override_styles/hover = ExtResource("5_btn_hover")
+text = "🔄 REPLAY"
+
+[node name="DialogueBox" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 317.0
+offset_top = 490.0
+offset_right = 900.0
+offset_bottom = 635.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_box")
+
+[node name="DialogueText" type="Label" parent="DialogueBox"]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 16.0
+offset_right = 558.0
+offset_bottom = 127.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Water problems can begin far beyond your farm. Let's follow the moisture pathway!"
+autowrap_mode = 2
+vertical_alignment = 1
+
+[node name="ResultPanel" type="Panel" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 410.0
+offset_top = 80.0
+offset_right = 1100.0
+offset_bottom = 475.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_box")
+
+[node name="ResultTitle" type="Label" parent="ResultPanel"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 28.0
+offset_right = 658.0
+offset_bottom = 68.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_bold_title")
+theme_override_font_sizes/font_size = 24
+text = "WHAT DOES THIS MEAN FOR YOUR FARM?"
+
+[node name="Divider" type="ColorRect" parent="ResultPanel"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 76.0
+offset_right = 658.0
+offset_bottom = 78.0
+color = Color(0.38431373, 0.8509804, 0.76862746, 0.6)
+
+[node name="ResultBody" type="Label" parent="ResultPanel"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 94.0
+offset_right = 658.0
+offset_bottom = 194.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 17
+text = "Changes in regional moisture and rainfall patterns may increase water stress on your farm. Lower soil moisture can make it harder for crops to grow and remain healthy."
+autowrap_mode = 2
+
+[node name="ScientificNote" type="Label" parent="ResultPanel"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 208.0
+offset_right = 658.0
+offset_bottom = 290.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 14
+text = "This is an illustrative explanation of a potential regional connection, not proof that the Amazon directly caused your farm's conditions."
+autowrap_mode = 2
+
+[node name="ResultButtons" type="Control" parent="ResultPanel"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -80.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="ReplayBtn" type="Button" parent="ResultPanel/ResultButtons"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 15.0
+offset_right = 232.0
+offset_bottom = 65.0
+theme_override_colors/font_color = Color(0.09019608, 0.29411766, 0.2627451, 1)
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = ExtResource("3_btn_normal")
+theme_override_styles/pressed = ExtResource("4_btn_pressed")
+theme_override_styles/hover = ExtResource("5_btn_hover")
+text = "🔄 REPLAY JOURNEY"
+
+[node name="ContinueBtn" type="Button" parent="ResultPanel/ResultButtons"]
+layout_mode = 0
+offset_left = 458.0
+offset_top = 15.0
+offset_right = 658.0
+offset_bottom = 65.0
+theme_override_colors/font_color = Color(0.09019608, 0.29411766, 0.2627451, 1)
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = ExtResource("3_btn_normal")
+theme_override_styles/pressed = ExtResource("4_btn_pressed")
+theme_override_styles/hover = ExtResource("5_btn_hover")
+text = "CONTINUE →"
