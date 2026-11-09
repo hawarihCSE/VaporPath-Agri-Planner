@@ -492,10 +492,7 @@ func _draw_arrow(canvas: Control, tip: Vector2, direction: Vector2, col: Color) 
 
 
 func _on_continue_button_pressed() -> void:
-	print("Screen 4: Continue pressed -> Navigating to Screen 5 (%s)..." % SCREEN_5_PATH)
-	if ResourceLoader.exists(SCREEN_5_PATH):
-		var err = get_tree().change_scene_to_file(SCREEN_5_PATH)
-		if err != OK:
-			push_error("Failed to load scene at '%s'. Error code: %d" % [SCREEN_5_PATH, err])
-	else:
-		print("Screen 5 scene ('%s') does not exist yet. Ready for next task." % SCREEN_5_PATH)
+	print("Screen 4: Navigating to Screen 5 (%s)..." % SCREEN_5_PATH)
+	var err: Error = get_tree().change_scene_to_file(SCREEN_5_PATH)
+	if err != OK:
+		push_error("Failed to load scene at '%s'. Error code: %d" % [SCREEN_5_PATH, err])

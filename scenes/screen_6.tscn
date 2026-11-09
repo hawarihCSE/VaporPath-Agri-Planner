@@ -1,0 +1,462 @@
+[gd_scene format=3]
+
+[ext_resource type="Texture2D" uid="uid://b3oda4aes3bog" path="res://assests/backgrounds/Country line.jpg" id="1_bg"]
+[ext_resource type="Texture2D" uid="uid://di8omvgng8285" path="res://assests/characters/Download_free_image_of_Basket_vegetable_smiling_holding__by_Jubjang_about_banana__banana_animation__3d_farmer__cartoon__and_plant_12128778-removebg-preview.png" id="2_basket"]
+[ext_resource type="StyleBox" uid="uid://dbhr8tbqom30r" path="res://assests/ui/button_normal.tres" id="3_btn_normal"]
+[ext_resource type="StyleBox" uid="uid://bw582rob68ii2" path="res://button_normal2.tres" id="4_btn_pressed"]
+[ext_resource type="StyleBox" uid="uid://baqk43phxd4bn" path="res://button_normal1.tres" id="5_btn_hover"]
+[ext_resource type="Script" path="res://scenes/screen_6.gd" id="6_script"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_badge"]
+bg_color = Color(0.866667, 0.956863, 0.92549, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.384314, 0.85098, 0.768627, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pill_crop"]
+bg_color = Color(0.88, 0.965, 0.935, 0.98)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.2, 0.72, 0.52, 0.9)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pill_saving"]
+bg_color = Color(0.88, 0.95, 0.98, 0.98)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.24, 0.68, 0.88, 0.9)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_plot_frame"]
+bg_color = Color(0.95, 0.985, 0.97, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.24, 0.68, 0.55, 0.95)
+corner_radius_top_left = 18
+corner_radius_top_right = 18
+corner_radius_bottom_right = 18
+corner_radius_bottom_left = 18
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_machine_selected"]
+bg_color = Color(0.88, 0.97, 0.94, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.12, 0.62, 0.52, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_machine_normal"]
+bg_color = Color(1, 1, 1, 0.95)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.384314, 0.85098, 0.768627, 0.6)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_machine_hover"]
+bg_color = Color(0.94, 0.99, 0.97, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.16, 0.62, 0.53, 0.9)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_canvas_frame"]
+bg_color = Color(0.90, 0.95, 0.98, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.384314, 0.85098, 0.768627, 0.6)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pill_selected"]
+content_margin_top = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.12, 0.62, 0.52, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pill_normal"]
+content_margin_top = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.9, 0.94, 0.93, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="Screen6" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("6_script")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_bg")
+
+[node name="BasketCharacter" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 110.0
+offset_right = 240.0
+offset_bottom = 570.0
+texture = ExtResource("2_basket")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="BasketBadge" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 578.0
+offset_right = 224.0
+offset_bottom = 616.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_badge")
+
+[node name="BadgeLabel" type="Label" parent="BasketBadge"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.0901961, 0.294118, 0.262745, 1)
+theme_override_font_sizes/font_size = 15
+text = "🧺 Irrigation Coach"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 0
+offset_left = 255.0
+offset_top = 10.0
+offset_right = 560.0
+offset_bottom = 48.0
+theme_override_colors/font_color = Color(0.06, 0.25, 0.2, 1)
+theme_override_font_sizes/font_size = 28
+text = "IRRIGATION CONTROL"
+
+[node name="CropIndicator" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 570.0
+offset_top = 10.0
+offset_right = 865.0
+offset_bottom = 48.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_pill_crop")
+
+[node name="CropIndicatorLabel" type="Label" parent="CropIndicator"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.08, 0.42, 0.32, 1)
+theme_override_font_sizes/font_size = 14
+text = "🌱 Plot Crop: Grain Sorghum"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WaterSavingBadge" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 878.0
+offset_top = 10.0
+offset_right = 1115.0
+offset_bottom = 48.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_pill_saving")
+
+[node name="WaterSavingLabel" type="Label" parent="WaterSavingBadge"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.06, 0.38, 0.55, 1)
+theme_override_font_sizes/font_size = 14
+text = "💧 Water Saved: -50%"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlotFrame" type="Panel" parent="."]
+clip_children = 2
+layout_mode = 0
+offset_left = 255.0
+offset_top = 54.0
+offset_right = 1115.0
+offset_bottom = 346.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_plot_frame")
+
+[node name="CloseUpCanvas" type="Control" parent="PlotFrame"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PlotTag" type="Label" parent="PlotFrame"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 10.0
+offset_right = 500.0
+offset_bottom = 34.0
+theme_override_colors/font_color = Color(0.09, 0.35, 0.28, 1)
+theme_override_font_sizes/font_size = 13
+text = "🔬 Farm Plot Cross-Section: Crops & Root Moisture System"
+
+[node name="MachinesRow" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 255.0
+offset_top = 356.0
+offset_right = 1115.0
+offset_bottom = 544.0
+theme_override_constants/separation = 16
+
+[node name="DripMachineCard" type="Button" parent="MachinesRow"]
+custom_minimum_size = Vector2(420, 185)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_machine_selected")
+theme_override_styles/hover = SubResource("StyleBoxFlat_machine_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_machine_selected")
+
+[node name="HBox" type="HBoxContainer" parent="MachinesRow/DripMachineCard"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 12.0
+offset_top = 10.0
+offset_right = -12.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/separation = 14
+
+[node name="DripPicBox" type="Panel" parent="MachinesRow/DripMachineCard/HBox"]
+clip_children = 2
+custom_minimum_size = Vector2(155, 165)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_canvas_frame")
+
+[node name="DripMachineCanvas" type="Control" parent="MachinesRow/DripMachineCard/HBox/DripPicBox"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="InfoVBox" type="VBoxContainer" parent="MachinesRow/DripMachineCard/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_constants/separation = 3
+alignment = 1
+
+[node name="Name" type="Label" parent="MachinesRow/DripMachineCard/HBox/InfoVBox"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.0901961, 0.294118, 0.262745, 1)
+theme_override_font_sizes/font_size = 18
+text = "Smart Drip Irrigation"
+
+[node name="Desc" type="Label" parent="MachinesRow/DripMachineCard/HBox/InfoVBox"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.3, 0.42, 0.38, 1)
+theme_override_font_sizes/font_size = 13
+text = "Pipes & water drops right to roots."
+
+[node name="Feature" type="Label" parent="MachinesRow/DripMachineCard/HBox/InfoVBox"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.12, 0.52, 0.68, 1)
+theme_override_font_sizes/font_size = 12
+text = "• Subsoil root saturation (zero waste)"
+
+[node name="Stat" type="Label" parent="MachinesRow/DripMachineCard/HBox/InfoVBox"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.12, 0.62, 0.52, 1)
+theme_override_font_sizes/font_size = 14
+text = "💧 Saves ~50% Water"
+
+[node name="StatusPill" type="Label" parent="MachinesRow/DripMachineCard/HBox/InfoVBox"]
+custom_minimum_size = Vector2(130, 30)
+layout_mode = 2
+size_flags_horizontal = 0
+mouse_filter = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 13
+theme_override_styles/normal = SubResource("StyleBoxFlat_pill_selected")
+text = "✓ PUMP ACTIVE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SprinklerMachineCard" type="Button" parent="MachinesRow"]
+custom_minimum_size = Vector2(420, 185)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_machine_normal")
+theme_override_styles/hover = SubResource("StyleBoxFlat_machine_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_machine_selected")
+
+[node name="HBox" type="HBoxContainer" parent="MachinesRow/SprinklerMachineCard"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 12.0
+offset_top = 10.0
+offset_right = -12.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/separation = 14
+
+[node name="SprinklerPicBox" type="Panel" parent="MachinesRow/SprinklerMachineCard/HBox"]
+clip_children = 2
+custom_minimum_size = Vector2(155, 165)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_canvas_frame")
+
+[node name="SprinklerMachineCanvas" type="Control" parent="MachinesRow/SprinklerMachineCard/HBox/SprinklerPicBox"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="InfoVBox" type="VBoxContainer" parent="MachinesRow/SprinklerMachineCard/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_constants/separation = 3
+alignment = 1
+
+[node name="Name" type="Label" parent="MachinesRow/SprinklerMachineCard/HBox/InfoVBox"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.0901961, 0.294118, 0.262745, 1)
+theme_override_font_sizes/font_size = 18
+text = "Micro-Sprinklers"
+
+[node name="Desc" type="Label" parent="MachinesRow/SprinklerMachineCard/HBox/InfoVBox"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.3, 0.42, 0.38, 1)
+theme_override_font_sizes/font_size = 13
+text = "Sprinklers spraying water mist."
+
+[node name="Feature" type="Label" parent="MachinesRow/SprinklerMachineCard/HBox/InfoVBox"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.12, 0.52, 0.68, 1)
+theme_override_font_sizes/font_size = 12
+text = "• Rotating cooling mist coverage"
+
+[node name="Stat" type="Label" parent="MachinesRow/SprinklerMachineCard/HBox/InfoVBox"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.12, 0.48, 0.7, 1)
+theme_override_font_sizes/font_size = 14
+text = "💧 Saves ~30% Water"
+
+[node name="StatusPill" type="Label" parent="MachinesRow/SprinklerMachineCard/HBox/InfoVBox"]
+custom_minimum_size = Vector2(130, 30)
+layout_mode = 2
+size_flags_horizontal = 0
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.3, 0.45, 0.42, 1)
+theme_override_font_sizes/font_size = 13
+theme_override_styles/normal = SubResource("StyleBoxFlat_pill_normal")
+text = "ACTIVATE RIG"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BackButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 255.0
+offset_top = 556.0
+offset_right = 455.0
+offset_bottom = 624.0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0.0901961, 0.294118, 0.262745, 1)
+theme_override_colors/font_hover_color = Color(0.0627451, 0.235294, 0.207843, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.0627451, 0.235294, 0.207843, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = ExtResource("3_btn_normal")
+theme_override_styles/pressed = ExtResource("4_btn_pressed")
+theme_override_styles/hover = ExtResource("5_btn_hover")
+text = "◀ BACK"
+
+[node name="ContinueButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 865.0
+offset_top = 556.0
+offset_right = 1115.0
+offset_bottom = 624.0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0.0901961, 0.294118, 0.262745, 1)
+theme_override_colors/font_hover_color = Color(0.0627451, 0.235294, 0.207843, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.0627451, 0.235294, 0.207843, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = ExtResource("3_btn_normal")
+theme_override_styles/pressed = ExtResource("4_btn_pressed")
+theme_override_styles/hover = ExtResource("5_btn_hover")
+text = "CONTINUE TO FARM ➔"

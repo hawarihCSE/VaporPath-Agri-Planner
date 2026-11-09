@@ -1,0 +1,430 @@
+[gd_scene format=3]
+
+[ext_resource type="Texture2D" uid="uid://b3oda4aes3bog" path="res://assests/backgrounds/Country line.jpg" id="1_bg"]
+[ext_resource type="Texture2D" uid="uid://di8omvgng8285" path="res://assests/characters/Download_free_image_of_Basket_vegetable_smiling_holding__by_Jubjang_about_banana__banana_animation__3d_farmer__cartoon__and_plant_12128778-removebg-preview.png" id="2_basket"]
+[ext_resource type="StyleBox" uid="uid://dbhr8tbqom30r" path="res://assests/ui/button_normal.tres" id="3_btn_normal"]
+[ext_resource type="StyleBox" uid="uid://bw582rob68ii2" path="res://button_normal2.tres" id="4_btn_pressed"]
+[ext_resource type="StyleBox" uid="uid://baqk43phxd4bn" path="res://button_normal1.tres" id="5_btn_hover"]
+[ext_resource type="Script" path="res://scenes/screen_7.gd" id="6_script"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_badge"]
+bg_color = Color(0.866667, 0.956863, 0.92549, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.384314, 0.85098, 0.768627, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_success_pill"]
+bg_color = Color(0.88, 0.97, 0.93, 0.98)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.2, 0.75, 0.55, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_panoramic_frame"]
+bg_color = Color(0.95, 0.985, 0.97, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.24, 0.68, 0.55, 0.95)
+corner_radius_top_left = 18
+corner_radius_top_right = 18
+corner_radius_bottom_right = 18
+corner_radius_bottom_left = 18
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tiny_crop"]
+bg_color = Color(0.88, 0.965, 0.935, 0.96)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.2, 0.72, 0.52, 0.85)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tiny_irrig"]
+bg_color = Color(0.88, 0.95, 0.98, 0.96)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.22, 0.65, 0.88, 0.85)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tiny_saving"]
+bg_color = Color(0.90, 0.97, 0.95, 0.96)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.16, 0.68, 0.58, 0.85)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_modal"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.12, 0.65, 0.52, 1)
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
+
+[node name="Screen7" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("6_script")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_bg")
+
+[node name="BasketCharacter" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 110.0
+offset_right = 230.0
+offset_bottom = 570.0
+texture = ExtResource("2_basket")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="BasketBadge" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 576.0
+offset_right = 216.0
+offset_bottom = 614.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_badge")
+
+[node name="BadgeLabel" type="Label" parent="BasketBadge"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.0901961, 0.294118, 0.262745, 1)
+theme_override_font_sizes/font_size = 15
+text = "🧺 Veggie Guide"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 0
+offset_left = 240.0
+offset_top = 10.0
+offset_right = 530.0
+offset_bottom = 48.0
+theme_override_colors/font_color = Color(0.06, 0.25, 0.2, 1)
+theme_override_font_sizes/font_size = 28
+text = "MY SMART FARM"
+
+[node name="SuccessBanner" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 538.0
+offset_top = 10.0
+offset_right = 1125.0
+offset_bottom = 48.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_success_pill")
+
+[node name="SuccessLabel" type="Label" parent="SuccessBanner"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.08, 0.45, 0.32, 1)
+theme_override_font_sizes/font_size = 14
+text = "🎉 Great Job, Farmer! Your farm is ready for a smarter and more sustainable future."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PanoramicFrame" type="Panel" parent="."]
+clip_children = 2
+layout_mode = 0
+offset_left = 240.0
+offset_top = 54.0
+offset_right = 1125.0
+offset_bottom = 496.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_panoramic_frame")
+
+[node name="PanoramicCanvas" type="Control" parent="PanoramicFrame"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TinyResultsRow" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 240.0
+offset_top = 504.0
+offset_right = 1125.0
+offset_bottom = 548.0
+theme_override_constants/separation = 14
+
+[node name="CropIndicator" type="Panel" parent="TinyResultsRow"]
+custom_minimum_size = Vector2(280, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_tiny_crop")
+
+[node name="HBox" type="HBoxContainer" parent="TinyResultsRow/CropIndicator"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 12.0
+offset_top = 4.0
+offset_right = -12.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="Icon" type="Label" parent="TinyResultsRow/CropIndicator/HBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "🌱"
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="TinyResultsRow/CropIndicator/HBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.0901961, 0.294118, 0.262745, 1)
+theme_override_font_sizes/font_size = 14
+text = "Crop: Grain Sorghum"
+vertical_alignment = 1
+
+[node name="IrrigationIndicator" type="Panel" parent="TinyResultsRow"]
+custom_minimum_size = Vector2(280, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_tiny_irrig")
+
+[node name="HBox" type="HBoxContainer" parent="TinyResultsRow/IrrigationIndicator"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 12.0
+offset_top = 4.0
+offset_right = -12.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="Icon" type="Label" parent="TinyResultsRow/IrrigationIndicator/HBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "💧"
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="TinyResultsRow/IrrigationIndicator/HBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.0901961, 0.294118, 0.262745, 1)
+theme_override_font_sizes/font_size = 14
+text = "Irrigation: Smart Drip"
+vertical_alignment = 1
+
+[node name="SavingsIndicator" type="Panel" parent="TinyResultsRow"]
+custom_minimum_size = Vector2(280, 44)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_tiny_saving")
+
+[node name="HBox" type="HBoxContainer" parent="TinyResultsRow/SavingsIndicator"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 12.0
+offset_top = 4.0
+offset_right = -12.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="Icon" type="Label" parent="TinyResultsRow/SavingsIndicator/HBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "🌊"
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="TinyResultsRow/SavingsIndicator/HBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.0901961, 0.294118, 0.262745, 1)
+theme_override_font_sizes/font_size = 14
+text = "Water Saved: ~60%"
+vertical_alignment = 1
+
+[node name="BackButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 240.0
+offset_top = 558.0
+offset_right = 440.0
+offset_bottom = 626.0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0.0901961, 0.294118, 0.262745, 1)
+theme_override_colors/font_hover_color = Color(0.0627451, 0.235294, 0.207843, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.0627451, 0.235294, 0.207843, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = ExtResource("3_btn_normal")
+theme_override_styles/pressed = ExtResource("4_btn_pressed")
+theme_override_styles/hover = ExtResource("5_btn_hover")
+text = "◀ BACK"
+
+[node name="FinishButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 875.0
+offset_top = 558.0
+offset_right = 1125.0
+offset_bottom = 626.0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0.0901961, 0.294118, 0.262745, 1)
+theme_override_colors/font_hover_color = Color(0.0627451, 0.235294, 0.207843, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.0627451, 0.235294, 0.207843, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = ExtResource("3_btn_normal")
+theme_override_styles/pressed = ExtResource("4_btn_pressed")
+theme_override_styles/hover = ExtResource("5_btn_hover")
+text = "FINISH 🏁"
+
+[node name="CompletionModal" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Dimmer" type="ColorRect" parent="CompletionModal"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.04, 0.12, 0.1, 0.72)
+
+[node name="ModalPanel" type="Panel" parent="CompletionModal"]
+layout_mode = 0
+offset_left = 220.0
+offset_top = 80.0
+offset_right = 932.0
+offset_bottom = 568.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_modal")
+
+[node name="ModalVBox" type="VBoxContainer" parent="CompletionModal/ModalPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 32.0
+offset_top = 28.0
+offset_right = -32.0
+offset_bottom = -28.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 12
+alignment = 1
+
+[node name="ModalCelebrationTitle" type="Label" parent="CompletionModal/ModalPanel/ModalVBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.0901961, 0.294118, 0.262745, 1)
+theme_override_font_sizes/font_size = 30
+text = "🎉 SIMULATION COMPLETE! 🎉"
+horizontal_alignment = 1
+
+[node name="ModalSubtitle" type="Label" parent="CompletionModal/ModalPanel/ModalVBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.12, 0.55, 0.42, 1)
+theme_override_font_sizes/font_size = 18
+text = "Thank you for playing VaporPath - Agri Planner!"
+horizontal_alignment = 1
+
+[node name="Divider" type="ColorRect" parent="CompletionModal/ModalPanel/ModalVBox"]
+custom_minimum_size = Vector2(0, 2)
+layout_mode = 2
+color = Color(0.384314, 0.85098, 0.768627, 0.5)
+
+[node name="ModalBody" type="Label" parent="CompletionModal/ModalPanel/ModalVBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.1, 0.2, 0.18, 1)
+theme_override_font_sizes/font_size = 16
+text = "You successfully created a resilient, climate-smart farming plan!
+
+By analyzing NASA satellite data for soil moisture, rainfall anomalies, and vegetation stress, you selected the best drought-tolerant crop and water-efficient irrigation method for your farm.
+
+Your farm is now prepared for changing water conditions and a sustainable future!"
+autowrap_mode = 2
+horizontal_alignment = 1
+
+[node name="Spacer" type="Control" parent="CompletionModal/ModalPanel/ModalVBox"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
+[node name="ModalButtons" type="HBoxContainer" parent="CompletionModal/ModalPanel/ModalVBox"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="ReviewReportBtn" type="Button" parent="CompletionModal/ModalPanel/ModalVBox/ModalButtons"]
+custom_minimum_size = Vector2(210, 56)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0.0901961, 0.294118, 0.262745, 1)
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = ExtResource("3_btn_normal")
+theme_override_styles/pressed = ExtResource("4_btn_pressed")
+theme_override_styles/hover = ExtResource("5_btn_hover")
+text = "📋 VIEW FARM"
+
+[node name="PlayAgainBtn" type="Button" parent="CompletionModal/ModalPanel/ModalVBox/ModalButtons"]
+custom_minimum_size = Vector2(210, 56)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(0.0901961, 0.294118, 0.262745, 1)
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = ExtResource("3_btn_normal")
+theme_override_styles/pressed = ExtResource("4_btn_pressed")
+theme_override_styles/hover = ExtResource("5_btn_hover")
+text = "🔄 PLAY AGAIN"
