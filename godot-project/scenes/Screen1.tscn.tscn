@@ -1,0 +1,78 @@
+[gd_scene format=3 uid="uid://wvashfomde1a"]
+
+[ext_resource type="Script" uid="uid://bxf30va73ty86" path="res://scenes/screen_1.tscn.gd" id="1_0his4"]
+[ext_resource type="Texture2D" uid="uid://b3oda4aes3bog" path="res://assests/backgrounds/Country line.jpg" id="1_72lpr"]
+[ext_resource type="Texture2D" uid="uid://j2wgupm6tfiy" path="res://assests/characters/Cheerful_cartoon_farmer_girl___Premium_AI-generated_PSD-removebg-preview.png" id="2_0d8lw"]
+[ext_resource type="StyleBox" uid="uid://cugkg1yk1a5cg" path="res://button_normal.tres" id="3_0d8lw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cpi6b"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.38431373, 0.8509804, 0.76862746, 1)
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
+
+[node name="Screen1_tscn" type="Control" unique_id=817908455]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0his4")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1579452348]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_72lpr")
+
+[node name="Farmer" type="TextureRect" parent="." unique_id=1256500203]
+layout_mode = 0
+offset_left = 764.0
+offset_top = 73.0
+offset_right = 1204.0
+offset_bottom = 673.0
+texture = ExtResource("2_0d8lw")
+
+[node name="DialogueBox" type="Panel" parent="." unique_id=546481791]
+layout_mode = 0
+offset_left = 254.0
+offset_top = 497.0
+offset_right = 888.0
+offset_bottom = 599.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_cpi6b")
+
+[node name="DialogueText" type="Label" parent="DialogueBox" unique_id=1047760080]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 15.0
+offset_right = 613.0
+offset_bottom = 90.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Farmer says...
+
+Oh no!! The Amazon Flying River is changing again… It's time to save my farm!"
+
+[node name="StartButton" type="Button" parent="." unique_id=1342947771]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 10.0
+offset_right = 406.0
+offset_bottom = 90.0
+theme_override_colors/font_color = Color(0.09019608, 0.29411766, 0.2627451, 1)
+theme_override_colors/font_hover_color = Color(0.09019608, 0.29411766, 0.2627451, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.09019608, 0.29411766, 0.2627451, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = ExtResource("3_0d8lw")
+action_mode = 0
+text = "START FARM SIMULATION
+"

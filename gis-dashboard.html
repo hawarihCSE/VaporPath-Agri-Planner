@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VAPORPATH // AGRI-PLANNER GIS &amp; SIMULATIONS</title>
+    <meta name="description" content="Data-driven, web-based climate decision-support system connecting continental moisture dynamics to ground-level crop resilience with NASA satellite telemetry and Godot 4 web simulations." />
+    <script src="./coi-serviceworker.js"></script>
+    <!-- Google Fonts: Inter & JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+    <!-- Tailwind CSS Runtime -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'system-ui', 'sans-serif'],
+              mono: ['JetBrains Mono', 'monospace'],
+            },
+            colors: {
+              obsidian: '#090D10',
+              panel: 'rgba(16, 20, 24, 0.82)',
+              cardBorder: 'rgba(255, 255, 255, 0.08)',
+              gisGreen: {
+                300: '#6EE7B7',
+                400: '#34D399',
+                500: '#10B981',
+                600: '#059669',
+              }
+            }
+          }
+        }
+      };
+    </script>
+    <style>
+      body {
+        background-color: #080C0E;
+        color: #E2E8F0;
+        overflow: hidden;
+        user-select: none;
+      }
+      .gis-backdrop {
+        background-image:
+          radial-gradient(circle at 50% 50%, rgba(16, 185, 129, 0.03) 0%, transparent 70%),
+          linear-gradient(to bottom, rgba(8, 12, 14, 0.4) 0%, rgba(8, 12, 14, 0.7) 100%);
+      }
+      .glass-hud {
+        background: rgba(13, 17, 21, 0.88);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.09);
+      }
+      .glass-modal {
+        background: rgba(10, 14, 18, 0.94);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+      }
+    </style>
+  </head>
+  <body class="w-screen h-screen relative font-sans bg-[#080C0E] text-[#E2E8F0] overflow-hidden select-none">
+    <div id="root"></div>
+    <script src="./assets/vaporpath-pdf.js"></script>
+    <script src="./assets/vaporpath-bundle.js"></script>
+  </body>
+</html>
